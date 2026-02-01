@@ -1,3 +1,4 @@
+// Returns random choice of Rock, Paper, or Scissors for the computer
 function getComputerChoice() {
     const randNum = Math.floor(Math.random() * 3)
     let choice
@@ -13,4 +14,15 @@ function getComputerChoice() {
             choice = "scissors"
             break
     }
+
+    return choice
 }
+
+// Gets users choice
+function getHumanChoice() {
+    let input = prompt("Please Enter: Rock, Paper, or Scissors")
+
+    return input
+}
+
+console.log(getHumanChoice())
