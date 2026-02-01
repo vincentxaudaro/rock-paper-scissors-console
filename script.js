@@ -1,3 +1,7 @@
+let humanScore = 0
+let computerScore = 0
+
+
 // Returns random choice of Rock, Paper, or Scissors for the computer
 function getComputerChoice() {
     const randNum = Math.floor(Math.random() * 3)
