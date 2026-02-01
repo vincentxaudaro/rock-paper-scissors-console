@@ -29,4 +29,61 @@ function getHumanChoice() {
     return input
 }
 
-console.log(getHumanChoice())
+
+// Plays the game using user input and computer choice
+function playGame(humanChoice, computerChoice) {
+    let humanChoiceLower = humanChoice.toLowerCase()
+
+    if (humanChoiceLower == computerChoice) {
+        console.log("Its a tie")
+    } else {
+        switch (humanChoiceLower) {
+            case "rock":
+                if(computerChoice === "scissors") {
+                    winnerOutput("You win", "human")
+                } else {
+                    winnerOutput("You lose", "computer")
+                }
+                break
+
+            case "paper":
+                if(computerChoice === "rock") {
+                    winnerOutput("You win", "human")
+                } else {
+                    winnerOutput("You lose", "computer")
+                }
+                break
+            
+            case "scissors":
+                if(computerChoice === "paper") {
+                    winnerOutput("You win", "human")
+                } else {
+                    winnerOutput("You lose", "computer")
+                }
+                break
+
+            default:
+                console.log("Please input either Rock, Paper, or Scissors")
+        }
+    }
+
+    console.log(`Scores: \n You: ${humanScore} \n Computer: ${computerScore}`)
+
+    function winnerOutput(message, player) {
+        console.log(message)
+        
+        if (player === "human") {
+            humanScore++
+        } else if (player === "computer") {
+            computerScore++
+        }
+
+    }
+}
+
+const humanSelection = getHumanChoice()
+const computerSelection = getComputerChoice()
+
+
+playGame(humanSelection, computerSelection)
+
